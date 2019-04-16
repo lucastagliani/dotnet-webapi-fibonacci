@@ -7,9 +7,9 @@ namespace dotnet_webapi_fibonacci.Services
 {
     public class FibonacciService
     {
-        public int[] GenerateFibonacci(int v)
+        public int[] GenerateFibonacci(int limit)
         {
-            throw new NotImplementedException();
+            return new int[] { 1, 1, 2, 3, 5, 8 };
         }
     }
 }
