@@ -7,6 +7,13 @@ namespace XUnitTest
     public class FibonacciServiceTest
     {
         [Fact]
+        public void GenerateFibonacci_Zero_Exception()
+        {
+            FibonacciService fibonacciService = new FibonacciService();
+            Assert.Throws<ArgumentException>(() => fibonacciService.GenerateFibonacci(0));
+        }
+
+        [Fact]
         public void GenerateFibonacci_Until10_Until8()
         {
             FibonacciService fibonacciService = new FibonacciService();
