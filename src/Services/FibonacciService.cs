@@ -11,10 +11,10 @@ namespace dotnet_webapi_fibonacci.Services
         private int MINIMUM_LIMIT = 0;
         private int MAXIMUM_LIMIT = 1000;
 
-        public int[] GenerateFibonacciSequenceUntil(int limit)
+        public int[] GetFibonacciSequenceUntil(int limit)
         {
             ValidateLimit(limit);
-            return CalculateFibonacciSequence(limit);
+            return CalculateFibonacciSequenceUntil(limit);
         }
 
         private void ValidateLimit(int limit)
@@ -30,19 +30,18 @@ namespace dotnet_webapi_fibonacci.Services
             }
         }
 
-        private int[] CalculateFibonacciSequence(int limit)
+        private int[] CalculateFibonacciSequenceUntil(int limit)
         {
             List<int> fibonacciListResult = new List<int>() { 0, 1 };
 
-            int penultimateNumber = 0;
-            int lastNumber = 1;
+            int penultimateNumber = 0, lastNumber = 1;
             int fibonacciNumber = CalculateFibonacciNumber(penultimateNumber, lastNumber);
 
             while (IsFibonacciNumberLessOrEqualLimit(fibonacciNumber, limit))
             {
                 fibonacciListResult.Add(fibonacciNumber);
 
-                penultimateNumber = lastNumber;
+                penultimateNumber = lastNumber = fibonacciNumber;
                 lastNumber = fibonacciNumber;
                 fibonacciNumber = CalculateFibonacciNumber(penultimateNumber, lastNumber);
             }
