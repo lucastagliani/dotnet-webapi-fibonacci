@@ -20,7 +20,7 @@ namespace dotnet_webapi_fibonacci.Controllers
             fibonacciService = new FibonacciService();
             int defaultLimit = 100;
 
-            return fibonacciService.GenerateFibonacci(defaultLimit);
+            return fibonacciService.GenerateFibonacciSequenceUntil(defaultLimit);
         }
 
         // GET api/fibonacci/10
@@ -29,7 +29,7 @@ namespace dotnet_webapi_fibonacci.Controllers
         {
             fibonacciService = new FibonacciService();
 
-            return fibonacciService.GenerateFibonacci(limit);
+            return fibonacciService.GenerateFibonacciSequenceUntil(limit);
         }
     }
 }
