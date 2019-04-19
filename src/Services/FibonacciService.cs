@@ -41,7 +41,7 @@ namespace dotnet_webapi_fibonacci.Services
             {
                 fibonacciListResult.Add(fibonacciNumber);
 
-                penultimateNumber = lastNumber = fibonacciNumber;
+                penultimateNumber = lastNumber;
                 lastNumber = fibonacciNumber;
                 fibonacciNumber = CalculateFibonacciNumber(penultimateNumber, lastNumber);
             }
