@@ -3,7 +3,7 @@ using dotnet_webapi_fibonacci.Services;
 using System;
 using Xunit;
 
-namespace XUnitTest
+namespace dotnet_webapi_fibonacci_test
 {
     public class FibonacciServiceTest
     {
