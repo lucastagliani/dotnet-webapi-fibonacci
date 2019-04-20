@@ -68,5 +68,16 @@ namespace dotnet_webapi_fibonacci_test
 
             Assert.Equal(expectedData, actualData);
         }
+
+        [Fact]
+        public void GetFibonacciSequenceWithLength_10_FibonacciSequenceUnti34()
+        {
+            FibonacciService fibonacciService = new FibonacciService();
+
+            int[] expectedData = new int[] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+            int[] actualData = fibonacciService.GetFibonacciSequenceWithLength(1000);
+
+            Assert.Equal(expectedData, actualData);
+        }
     }
 }

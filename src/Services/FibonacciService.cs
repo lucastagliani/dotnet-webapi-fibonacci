@@ -58,5 +58,10 @@ namespace dotnet_webapi_fibonacci.Services
         {
             return fibonacciNumber <= limit;
         }
+
+        public int[] GetFibonacciSequenceWithLength(int length)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
