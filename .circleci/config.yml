@@ -6,10 +6,14 @@ jobs:
    steps:
      - checkout
      - run:
+         name: Restore packages
+         command:
+           dotnet restore .\src\dotnet-webapi-fibonacci.csproj
+     - run:
          name: Build App
          command:
-           dotnet build
+           dotnet build .\src\dotnet-webapi-fibonacci.csproj
      - run:
          name: Run Tests
          command:
-           dotnet test
+           dotnet test .\test\XUnitTest\dotnet-webapi-fibonacci-test.csproj
