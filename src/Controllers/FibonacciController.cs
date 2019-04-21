@@ -12,13 +12,11 @@ namespace dotnet_webapi_fibonacci.Controllers
     [ApiController]
     public class FibonacciController : ControllerBase
     {
-        FibonacciService fibonacciService;
-
         // GET api/fibonacci
         [HttpGet]
         public ActionResult<FibonacciResult> Get()
         {
-            fibonacciService = new FibonacciService();
+            FibonacciService fibonacciService = new FibonacciService();
             int defaultLimit = 100;
 
             FibonacciResult fibonacciResult = new FibonacciResult();
@@ -39,7 +37,7 @@ namespace dotnet_webapi_fibonacci.Controllers
         [HttpGet("{limit}")]
         public ActionResult<FibonacciResult> Get(int limit)
         {
-            fibonacciService = new FibonacciService();
+            FibonacciService fibonacciService = new FibonacciService();
 
             FibonacciResult fibonacciResult = new FibonacciResult();
 
