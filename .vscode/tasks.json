@@ -1,15 +1,16 @@
 {
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
     "version": "2.0.0",
-    "command": "dotnet",
-    "type": "shell",
-    "args": [],
-    "options":  {
-        "cwd": "${workspaceRoot}/"
-    },
     "tasks": [
         {
             "label": "build",
-            "args": [ ],
+            "command": "dotnet build ./src/dotnet-webapi-fibonacci.csproj",
+            "type": "shell",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
             "problemMatcher": "$msCompile"
         }
     ]
