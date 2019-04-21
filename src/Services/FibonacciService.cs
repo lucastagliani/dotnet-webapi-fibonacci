@@ -8,8 +8,8 @@ namespace dotnet_webapi_fibonacci.Services
 {
     public class FibonacciService
     {
-        private int MINIMUM_LIMIT = 0;
-        private int MAXIMUM_LIMIT = 1000;
+        private readonly int MINIMUM_LIMIT = 0;
+        private readonly int MAXIMUM_LIMIT = 1000;
 
         public int[] GetFibonacciSequenceUntil(int limit)
         {
