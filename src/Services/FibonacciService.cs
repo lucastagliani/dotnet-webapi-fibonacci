@@ -61,7 +61,19 @@ namespace dotnet_webapi_fibonacci.Services
 
         public int[] GetFibonacciSequenceWithLength(int length)
         {
-            return new int[] { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+            List<int> fibonacciListResult = new List<int>() { 0, 1 };
+
+            var fibonacciListResultLength = fibonacciListResult.Count;
+
+            while (fibonacciListResultLength < length) 
+            {
+                var newFibonacciValue = CalculateFibonacciNumber(fibonacciListResult[fibonacciListResultLength - 2], fibonacciListResult[fibonacciListResultLength - 1]);
+                fibonacciListResult.Add(newFibonacciValue);
+
+                fibonacciListResultLength = fibonacciListResult.Count;
+            }
+
+            return fibonacciListResult.ToArray();
         }
     }
 }
