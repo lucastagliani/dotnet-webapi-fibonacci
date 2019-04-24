@@ -24,13 +24,18 @@ namespace dotnet_webapi_fibonacci.Controllers
             try
             {
                 fibonacciResult.Data = fibonacciService.GetFibonacciSequenceUntil(defaultLimit);
+                return Ok(fibonacciResult);
+            }
+            catch (ArgumentException ex)
+            {
+                fibonacciResult.ErrorMessage = ex.Message;
+                return BadRequest(fibonacciResult);
             }
             catch (Exception ex)
             {
                 fibonacciResult.ErrorMessage = ex.Message;
+                return StatusCode(500, fibonacciResult);
             }
-
-            return fibonacciResult;
         }
 
         // GET api/fibonacci/10
@@ -44,13 +49,18 @@ namespace dotnet_webapi_fibonacci.Controllers
             try
             {
                 fibonacciResult.Data = fibonacciService.GetFibonacciSequenceUntil(limit);
+                return Ok(fibonacciResult);
+            }
+            catch (ArgumentException ex)
+            {
+                fibonacciResult.ErrorMessage = ex.Message;
+                return BadRequest(fibonacciResult);
             }
             catch (Exception ex)
             {
                 fibonacciResult.ErrorMessage = ex.Message;
+                return StatusCode(500, fibonacciResult);
             }
-
-            return fibonacciResult;
         }
     }
 }
