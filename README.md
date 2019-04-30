@@ -24,7 +24,7 @@ In command line:
 
 4. Run API: `dotnet run --project src`
 
-    _It will be runnin on http://localhost:5050_
+    _It will be running on http://localhost:5050_
 
     If you hit http://localhost:5050/api/fibonacci on your brower or API app like Postamn, you should get some data returned. 
 
