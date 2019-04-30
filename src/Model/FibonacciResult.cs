@@ -7,8 +7,16 @@ namespace dotnet_webapi_fibonacci.Model
 {
     public class FibonacciResult
     {
-        public int[] Data { get; set; }
-        public string ErrorMessage { get; set; }
+        public FibonacciResult(int[] data) {
+            Data = data;
+        }
+
+        public FibonacciResult(string errorMessage) {
+            ErrorMessage = errorMessage;
+        }
+
+        public int[] Data { get; }
+        public string ErrorMessage { get; }
         public bool HasError => !string.IsNullOrEmpty(ErrorMessage);
     }
 }
