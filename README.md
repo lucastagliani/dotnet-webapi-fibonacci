@@ -1,8 +1,36 @@
-# dotnet-webapi-fibonacci
-Repo to play a little with dotnet core webapi in fibonacci algorithm
+dotnet-webapi-fibonacci
+===
+
+Repo to play a little with dotnet core webapi in fibonacci algorithm in some different ways.
+
+_Actually, this repo makes no real sense, but has TDD, CI and others good engineering pratices._
 
 [![CircleCI](https://circleci.com/gh/lucastagliani/dotnet-webapi-fibonacci.svg?style=svg)](https://circleci.com/gh/lucastagliani/dotnet-webapi-fibonacci)
 
-TODO: How to run
 
-TODO: what does it have
+# How to run it
+
+In command line:
+
+1. Clone de repository... 
+
+    SSH: `git clone git@github.com:lucastagliani/dotnet-webapi-fibonacci.git`  
+    or  
+    HTTP: `git clone https://github.com/lucastagliani/dotnet-webapi-fibonacci.git`
+
+2. Enter the repository folder: `cd dotnet-webapi-fibonacci`
+
+3. Restore dependencies: `dotnet restore src\`
+
+4. Run API: `dotnet run --project src\`
+
+    _It will be runnin on http://localhost:5050_
+
+    If you hit http://localhost:5050/api/fibonacci on your brower or API app like Postamn, you should get some data returned. 
+
+
+# How to test it 
+
+`dotnet test test\XUnitTest\`
+
+
