@@ -8,7 +8,7 @@ _Actually, this repo makes no real sense, but has TDD, CI and others good engine
 [![CircleCI](https://circleci.com/gh/lucastagliani/dotnet-webapi-fibonacci.svg?style=svg)](https://circleci.com/gh/lucastagliani/dotnet-webapi-fibonacci)
 
 
-# How to run it
+## How to run it
 
 In command line:
 
@@ -20,9 +20,9 @@ In command line:
 
 2. Enter the repository folder: `cd dotnet-webapi-fibonacci`
 
-3. Restore dependencies: `dotnet restore src\`
+3. Restore dependencies: `dotnet restore src`
 
-4. Run API: `dotnet run --project src\`
+4. Run API: `dotnet run --project src`
 
     _It will be runnin on http://localhost:5050_
 
@@ -30,9 +30,9 @@ In command line:
 
 ![Image](how-to-run-it.png "How to run it")
 
-# How to test it 
+## How to test it 
 
-`dotnet test test\`
+`dotnet test test`
 
 ![Image](how-to-test-it.png "How to test it")
 
