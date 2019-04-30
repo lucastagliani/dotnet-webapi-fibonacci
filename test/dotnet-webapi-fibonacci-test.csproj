@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\dotnet-webapi-fibonacci.csproj" />
+    <ProjectReference Include="..\src\dotnet-webapi-fibonacci.csproj" />
   </ItemGroup>
 
 </Project>
