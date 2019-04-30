@@ -12,7 +12,7 @@ _Actually, this repo makes no real sense, but has TDD, CI and others good engine
 
 In command line:
 
-1. Clone de repository... 
+1. Clone the repository: 
 
     SSH: `git clone git@github.com:lucastagliani/dotnet-webapi-fibonacci.git`  
     or  
@@ -28,9 +28,12 @@ In command line:
 
     If you hit http://localhost:5050/api/fibonacci on your brower or API app like Postamn, you should get some data returned. 
 
+![Image](how-to-run-it.png "How to run it")
 
 # How to test it 
 
 `dotnet test test\XUnitTest\`
+
+![Image](how-to-test-it.png "How to test it")
 
 
