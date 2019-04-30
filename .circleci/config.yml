@@ -16,4 +16,4 @@ jobs:
      - run:
          name: Run Tests
          command:
-           dotnet test ./test/XUnitTest/dotnet-webapi-fibonacci-test.csproj
+           dotnet test ./test/dotnet-webapi-fibonacci-test.csproj
