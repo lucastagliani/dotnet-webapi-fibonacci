@@ -19,21 +19,21 @@ namespace dotnet_webapi_fibonacci.Controllers
             FibonacciService fibonacciService = new FibonacciService();
             int defaultLimit = 100;
 
-            FibonacciResult fibonacciResult = new FibonacciResult();
+            FibonacciResult fibonacciResult;
 
             try
             {
-                fibonacciResult.Data = fibonacciService.GetFibonacciSequenceUntil(defaultLimit);
+                fibonacciResult = new FibonacciResult(fibonacciService.GetFibonacciSequenceUntil(defaultLimit));
                 return Ok(fibonacciResult);
             }
             catch (ArgumentException ex)
             {
-                fibonacciResult.ErrorMessage = ex.Message;
+                fibonacciResult = new FibonacciResult(ex.Message);
                 return BadRequest(fibonacciResult);
             }
             catch (Exception ex)
             {
-                fibonacciResult.ErrorMessage = ex.Message;
+                fibonacciResult = new FibonacciResult(ex.Message);
                 return StatusCode(500, fibonacciResult);
             }
         }
@@ -44,21 +44,21 @@ namespace dotnet_webapi_fibonacci.Controllers
         {
             FibonacciService fibonacciService = new FibonacciService();
 
-            FibonacciResult fibonacciResult = new FibonacciResult();
+            FibonacciResult fibonacciResult;
 
             try
             {
-                fibonacciResult.Data = fibonacciService.GetFibonacciSequenceUntil(limit);
+                fibonacciResult = new FibonacciResult(fibonacciService.GetFibonacciSequenceUntil(limit));
                 return Ok(fibonacciResult);
             }
             catch (ArgumentException ex)
             {
-                fibonacciResult.ErrorMessage = ex.Message;
+                fibonacciResult = new FibonacciResult(ex.Message);
                 return BadRequest(fibonacciResult);
             }
             catch (Exception ex)
             {
-                fibonacciResult.ErrorMessage = ex.Message;
+                fibonacciResult = new FibonacciResult(ex.Message);
                 return StatusCode(500, fibonacciResult);
             }
         }
