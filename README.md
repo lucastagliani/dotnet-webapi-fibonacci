@@ -32,7 +32,7 @@ In command line:
 
 # How to test it 
 
-`dotnet test test\XUnitTest\`
+`dotnet test test\`
 
 ![Image](how-to-test-it.png "How to test it")
 
