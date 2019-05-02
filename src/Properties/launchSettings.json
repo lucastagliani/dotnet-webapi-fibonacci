@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/fibonacci",
+      "launchUrl": "api/fibonacci/until",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "dotnet_webapi_fibonacci": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/fibonacci",
+      "launchUrl": "api/fibonacci/until",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

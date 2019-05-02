@@ -13,12 +13,13 @@ namespace dotnet_webapi_fibonacci.Controllers
     [ApiController]
     public class FibonacciController : ControllerBase
     {
-        IFibonacciService service;
+        readonly IFibonacciService service;
 
         public FibonacciController(IFibonacciService fibonacciService)
         {
             service = fibonacciService;
         }
+
         // GET api/fibonacci
         [HttpGet]
         public ActionResult<FibonacciResult> Until()
