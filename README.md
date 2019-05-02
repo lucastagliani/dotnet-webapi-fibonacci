@@ -3,7 +3,9 @@ dotnet-webapi-fibonacci
 
 Repo to play a little with dotnet core webapi in fibonacci algorithm in some different ways.
 
-_Actually, this repo makes no real sense, but has TDD, CI and others good engineering pratices._
+_Actually, this repo makes no real sense, but has TDD, CI and others good engineering pratices._  
+
+_Oh, it runs on Windows and Linux at least, both visual studio and visual code._
 
 [![CircleCI](https://circleci.com/gh/lucastagliani/dotnet-webapi-fibonacci.svg?style=svg)](https://circleci.com/gh/lucastagliani/dotnet-webapi-fibonacci)
 
