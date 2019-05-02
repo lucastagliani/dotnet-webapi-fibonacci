@@ -40,9 +40,9 @@ In command line:
 
 _At this moment, this API has these options:_
 
-`GET` http://localhost:5050/api/fibonacci/until
-`GET` http://localhost:5050/api/fibonacci/until/1000
-`GET` http://localhost:5050/api/fibonacci/length
-`GET` http://localhost:5050/api/fibonacci/length/1000
+`GET` http://localhost:5050/api/fibonacci/until  
+`GET` http://localhost:5050/api/fibonacci/until/1000  
+`GET` http://localhost:5050/api/fibonacci/length  
+`GET` http://localhost:5050/api/fibonacci/length/1000  
 
 
