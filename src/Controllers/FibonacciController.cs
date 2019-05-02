@@ -13,14 +13,14 @@ namespace dotnet_webapi_fibonacci.Controllers
     [ApiController]
     public class FibonacciController : ControllerBase
     {
-        readonly IFibonacciService service;
+        private readonly IFibonacciService _service;
 
         public FibonacciController(IFibonacciService fibonacciService)
         {
-            service = fibonacciService;
+            _service = fibonacciService;
         }
 
-        // GET api/fibonacci
+        // GET api/fibonacci/until
         [HttpGet]
         public ActionResult<FibonacciResult> Until()
         {
@@ -30,7 +30,7 @@ namespace dotnet_webapi_fibonacci.Controllers
 
             try
             {
-                fibonacciResult = new FibonacciResult(service.GetFibonacciSequenceUntil(defaultLimit));
+                fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceUntil(defaultLimit));
                 return Ok(fibonacciResult);
             }
             catch (ArgumentException ex)
@@ -45,7 +45,7 @@ namespace dotnet_webapi_fibonacci.Controllers
             }
         }
 
-        // GET api/fibonacci/10
+        // GET api/fibonacci/until/100
         [HttpGet("{limit}")]
         public ActionResult<FibonacciResult> Until(int limit)
         {
@@ -53,7 +53,55 @@ namespace dotnet_webapi_fibonacci.Controllers
 
             try
             {
-                fibonacciResult = new FibonacciResult(service.GetFibonacciSequenceUntil(limit));
+                fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceUntil(limit));
+                return Ok(fibonacciResult);
+            }
+            catch (ArgumentException ex)
+            {
+                fibonacciResult = new FibonacciResult(ex.Message);
+                return BadRequest(fibonacciResult);
+            }
+            catch (Exception ex)
+            {
+                fibonacciResult = new FibonacciResult(ex.Message);
+                return StatusCode(500, fibonacciResult);
+            }
+        }
+
+        // GET api/fibonacci/length
+        [HttpGet]
+        public ActionResult<FibonacciResult> Length()
+        {
+            int defaultLength = 10;
+
+            FibonacciResult fibonacciResult;
+
+            try
+            {
+                fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceWithLength(defaultLength));
+                return Ok(fibonacciResult);
+            }
+            catch (ArgumentException ex)
+            {
+                fibonacciResult = new FibonacciResult(ex.Message);
+                return BadRequest(fibonacciResult);
+            }
+            catch (Exception ex)
+            {
+                fibonacciResult = new FibonacciResult(ex.Message);
+                return StatusCode(500, fibonacciResult);
+            }
+        }
+
+        // GET api/fibonacci/length/10
+        [HttpGet("{length}")]
+        public ActionResult<FibonacciResult> Length(int length)
+        {
+            FibonacciResult fibonacciResult;
+
+            try
+            {
+                fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceWithLength(length));
                 return Ok(fibonacciResult);
             }
             catch (ArgumentException ex)
