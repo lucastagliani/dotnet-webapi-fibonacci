@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace dotnet_webapi_fibonacci.Model
+namespace dotnet_webapi_fibonacci.Models
 {
     public class FibonacciResult
     {

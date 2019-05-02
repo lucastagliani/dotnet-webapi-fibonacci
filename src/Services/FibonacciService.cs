@@ -1,4 +1,5 @@
 ﻿using dotnet_webapi_fibonacci.Contants;
+using dotnet_webapi_fibonacci.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace dotnet_webapi_fibonacci.Services
 {
-    public class FibonacciService
+    public class FibonacciService : IFibonacciService
     {
         private readonly int MINIMUM_LIMIT = 0;
         private readonly int MAXIMUM_LIMIT = 1000;
@@ -15,6 +16,23 @@ namespace dotnet_webapi_fibonacci.Services
         {
             ValidateLimit(limit);
             return CalculateFibonacciSequenceUntil(limit);
+        }
+
+        public int[] GetFibonacciSequenceWithLength(int length)
+        {
+            List<int> fibonacciListResult = new List<int>() { 0, 1 };
+
+            var fibonacciListResultLength = fibonacciListResult.Count;
+
+            while (fibonacciListResultLength < length)
+            {
+                var newFibonacciValue = CalculateFibonacciNumber(fibonacciListResult[fibonacciListResultLength - 2], fibonacciListResult[fibonacciListResultLength - 1]);
+                fibonacciListResult.Add(newFibonacciValue);
+
+                fibonacciListResultLength = fibonacciListResult.Count;
+            }
+
+            return fibonacciListResult.ToArray();
         }
 
         private void ValidateLimit(int limit)
@@ -57,23 +75,6 @@ namespace dotnet_webapi_fibonacci.Services
         private bool IsFibonacciNumberLessOrEqualLimit(int fibonacciNumber, int limit)
         {
             return fibonacciNumber <= limit;
-        }
-
-        public int[] GetFibonacciSequenceWithLength(int length)
-        {
-            List<int> fibonacciListResult = new List<int>() { 0, 1 };
-
-            var fibonacciListResultLength = fibonacciListResult.Count;
-
-            while (fibonacciListResultLength < length) 
-            {
-                var newFibonacciValue = CalculateFibonacciNumber(fibonacciListResult[fibonacciListResultLength - 2], fibonacciListResult[fibonacciListResultLength - 1]);
-                fibonacciListResult.Add(newFibonacciValue);
-
-                fibonacciListResultLength = fibonacciListResult.Count;
-            }
-
-            return fibonacciListResult.ToArray();
         }
     }
 }
