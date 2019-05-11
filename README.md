@@ -9,6 +9,13 @@ _Oh, it runs on Windows and Linux at least, both visual studio and visual code._
 
 [![CircleCI](https://circleci.com/gh/lucastagliani/dotnet-webapi-fibonacci.svg?style=svg)](https://circleci.com/gh/lucastagliani/dotnet-webapi-fibonacci)
 
+## Before running it
+
+You need to have .NET Core!
+
+You can download it here: https://dotnet.microsoft.com/download
+
+After install this, you can check if everything is OK by typing `dotnet --version` in your command line.
 
 ## How to run it
 
