@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace dotnet_webapi_fibonacci.Models
 {
@@ -15,8 +16,13 @@ namespace dotnet_webapi_fibonacci.Models
             ErrorMessage = errorMessage;
         }
 
+        [BsonElement("data")]
         public int[] Data { get; }
+
+        [BsonElement("errorMessage")]
         public string ErrorMessage { get; }
+        
+        [BsonElement("hasError")]
         public bool HasError => !string.IsNullOrEmpty(ErrorMessage);
     }
 }
