@@ -13,11 +13,16 @@ namespace dotnet_webapi_fibonacci.Controllers
     [ApiController]
     public class FibonacciController : ControllerBase
     {
-        private readonly IFibonacciService _service;
+        private readonly string ALGORITHM_NAME_LENGTH = "length";
+        private readonly string ALGORITHM_NAME_UNTIL = "until";
 
-        public FibonacciController(IFibonacciService fibonacciService)
+        private readonly IFibonacciService _service;
+        private readonly ILogRepository _log;
+
+        public FibonacciController(IFibonacciService fibonacciService, ILogRepository logRepository)
         {
             _service = fibonacciService;
+            _log = logRepository;
         }
 
         // GET api/fibonacci/until
@@ -31,16 +36,19 @@ namespace dotnet_webapi_fibonacci.Controllers
             try
             {
                 fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceUntil(defaultLimit));
+                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
                 return Ok(fibonacciResult);
             }
             catch (ArgumentException ex)
             {
                 fibonacciResult = new FibonacciResult(ex.Message);
+                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
                 return BadRequest(fibonacciResult);
             }
             catch (Exception ex)
             {
                 fibonacciResult = new FibonacciResult(ex.Message);
+                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
                 return StatusCode(500, fibonacciResult);
             }
         }
@@ -54,16 +62,19 @@ namespace dotnet_webapi_fibonacci.Controllers
             try
             {
                 fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceUntil(limit));
+                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
                 return Ok(fibonacciResult);
             }
             catch (ArgumentException ex)
             {
                 fibonacciResult = new FibonacciResult(ex.Message);
+                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
                 return BadRequest(fibonacciResult);
             }
             catch (Exception ex)
             {
                 fibonacciResult = new FibonacciResult(ex.Message);
+                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
                 return StatusCode(500, fibonacciResult);
             }
         }
@@ -79,16 +90,19 @@ namespace dotnet_webapi_fibonacci.Controllers
             try
             {
                 fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceWithLength(defaultLength));
+                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
                 return Ok(fibonacciResult);
             }
             catch (ArgumentException ex)
             {
                 fibonacciResult = new FibonacciResult(ex.Message);
+                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
                 return BadRequest(fibonacciResult);
             }
             catch (Exception ex)
             {
                 fibonacciResult = new FibonacciResult(ex.Message);
+                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
                 return StatusCode(500, fibonacciResult);
             }
         }
@@ -102,16 +116,19 @@ namespace dotnet_webapi_fibonacci.Controllers
             try
             {
                 fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceWithLength(length));
+                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
                 return Ok(fibonacciResult);
             }
             catch (ArgumentException ex)
             {
                 fibonacciResult = new FibonacciResult(ex.Message);
+                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
                 return BadRequest(fibonacciResult);
             }
             catch (Exception ex)
             {
                 fibonacciResult = new FibonacciResult(ex.Message);
+                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
                 return StatusCode(500, fibonacciResult);
             }
         }

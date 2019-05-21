@@ -13,11 +13,13 @@ namespace dotnet_webapi_fibonacci_test
     {
         private readonly FibonacciController _controller;
         private readonly Mock<IFibonacciService> _mockService;
+        private readonly Mock<ILogRepository> _mockRepository;
 
         public FibonacciControllerTest()
         {
             _mockService = new Mock<IFibonacciService>();
-            _controller = new FibonacciController(_mockService.Object);
+            _mockRepository = new Mock<ILogRepository>();
+            _controller = new FibonacciController(_mockService.Object, _mockRepository.Object);
         }
 
         [Fact]
