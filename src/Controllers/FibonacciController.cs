@@ -24,38 +24,9 @@ namespace dotnet_webapi_fibonacci.Controllers
             _service = fibonacciService;
             _log = logRepository;
         }
-
-        // GET api/fibonacci/until
-        [HttpGet]
-        public ActionResult<FibonacciResult> Until()
-        {
-            int defaultLimit = 100;
-
-            FibonacciResult fibonacciResult;
-
-            try
-            {
-                fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceUntil(defaultLimit));
-                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
-                return Ok(fibonacciResult);
-            }
-            catch (ArgumentException ex)
-            {
-                fibonacciResult = new FibonacciResult(ex.Message);
-                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
-                return BadRequest(fibonacciResult);
-            }
-            catch (Exception ex)
-            {
-                fibonacciResult = new FibonacciResult(ex.Message);
-                _log.Create(new Log(ALGORITHM_NAME_UNTIL, "", fibonacciResult));
-                return StatusCode(500, fibonacciResult);
-            }
-        }
-
         // GET api/fibonacci/until/100
         [HttpGet("{limit}")]
-        public ActionResult<FibonacciResult> Until(int limit)
+        public ActionResult<FibonacciResult> Until(int limit = 100)
         {
             FibonacciResult fibonacciResult;
 
@@ -79,37 +50,9 @@ namespace dotnet_webapi_fibonacci.Controllers
             }
         }
 
-        // GET api/fibonacci/length
-        [HttpGet]
-        public ActionResult<FibonacciResult> Length()
-        {
-            int defaultLength = 10;
-
-            FibonacciResult fibonacciResult;
-
-            try
-            {
-                fibonacciResult = new FibonacciResult(_service.GetFibonacciSequenceWithLength(defaultLength));
-                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
-                return Ok(fibonacciResult);
-            }
-            catch (ArgumentException ex)
-            {
-                fibonacciResult = new FibonacciResult(ex.Message);
-                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
-                return BadRequest(fibonacciResult);
-            }
-            catch (Exception ex)
-            {
-                fibonacciResult = new FibonacciResult(ex.Message);
-                _log.Create(new Log(ALGORITHM_NAME_LENGTH, "", fibonacciResult));
-                return StatusCode(500, fibonacciResult);
-            }
-        }
-
         // GET api/fibonacci/length/10
         [HttpGet("{length}")]
-        public ActionResult<FibonacciResult> Length(int length)
+        public ActionResult<FibonacciResult> Length(int length = 100)
         {
             FibonacciResult fibonacciResult;
 
