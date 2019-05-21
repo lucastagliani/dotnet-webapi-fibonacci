@@ -11,11 +11,18 @@ _Oh, it runs on Windows and Linux at least, both visual studio and visual code._
 
 ## Before running it
 
-You need to have .NET Core!
+1. You need to have .NET Core!
 
 You can download it here: https://dotnet.microsoft.com/download
 
 After install this, you can check if everything is OK by typing `dotnet --version` in your command line.
+
+2. You also need Docker Compose!
+
+You can download it here: https://docs.docker.com/compose/install/
+
+After install this, you can check if everything is OK by typing `docker-compose --version` in your command line.
+
 
 ## How to run it
 
@@ -31,13 +38,15 @@ In command line:
 
 3. Restore dependencies: `dotnet restore src`
 
-4. Run API: `dotnet run --project src`
+4. If you do not want to run Mongo locally, you will need to `docker-compose up`
+
+5. Run API: `dotnet run --project src`
 
     _It will be running on http://localhost:5050_
 
     If you hit http://localhost:5050/api/fibonacci on your brower or API app like Postamn, you should get some data returned. 
 
-![Image](how-to-run-it.png "How to run it")
+![Image](how-to-run-it.png "How1 to run it")
 
 ## How to test it 
 
