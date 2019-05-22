@@ -13,7 +13,7 @@ namespace dotnet_webapi_fibonacci.Services
 
         public LogRepository(IConfiguration config)
         {
-            var client = new MongoClient(config.GetConnectionString("fibonacci-db"));
+            var client = new MongoClient(config.GetConnectionString("fibonacci-db-prd"));
             var database = client.GetDatabase("fibonacci-db");
             _logs = database.GetCollection<Log>("logs");
         }

@@ -6,7 +6,7 @@ namespace dotnet_webapi_fibonacci.Models
 {
     public class Log
     {
-        public Log(string algorithm, string parameter, Object objectReturned) 
+        public Log(string algorithm, int parameter, Object objectReturned) 
         {
             Algorithm = algorithm;
             Parameter = parameter;
@@ -22,7 +22,7 @@ namespace dotnet_webapi_fibonacci.Models
         public string Algorithm { get; }
         
         [BsonElement("parameter")]
-        public string Parameter { get; }
+        public int Parameter { get; }
         
         [BsonElement("requestedAt")]
         public BsonDateTime RequestedAt { get; }
