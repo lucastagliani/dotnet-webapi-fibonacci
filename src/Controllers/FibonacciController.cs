@@ -51,7 +51,7 @@ namespace dotnet_webapi_fibonacci.Controllers
 
         // GET api/fibonacci/length/10
         [HttpGet("{length?}")]
-        public ActionResult<FibonacciResult> Length(int length = 100)
+        public ActionResult<FibonacciResult> Length(int length = 10)
         {
             FibonacciResult fibonacciResult;
 
