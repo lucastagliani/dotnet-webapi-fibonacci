@@ -17,7 +17,9 @@ You can download it here: https://dotnet.microsoft.com/download
 
 After install this, you can check if everything is OK by typing `dotnet --version` in your command line.
 
-2. You also need Docker Compose!
+2. You also need* Docker Compose!
+
+_* Unless you would like to use your own Mongo server locally._
 
 You can download it here: https://docs.docker.com/compose/install/
 
@@ -38,13 +40,13 @@ In command line:
 
 3. Restore dependencies: `dotnet restore src`
 
-4. If you do not want to run Mongo locally, you will need to `docker-compose up`
+4. If you do not want to run Mongo locally, you will need to `docker-compose up -d`
 
 5. Run API: `dotnet run --project src`
 
-    _It will be running on http://localhost:5050_
+    _It will be running on http://localhost:5000_
 
-    If you hit http://localhost:5050/api/fibonacci on your brower or API app like Postamn, you should get some data returned. 
+    If you hit http://localhost:5000/api/fibonacci on your browser or API app (for example Postman), you should get some data returned. 
 
 ![Image](how-to-run-it.png "How1 to run it")
 
@@ -59,8 +61,8 @@ In command line:
 _At this moment, this API has these options:_
 
 `GET` https://dotnet-webapi-fibonacci.herokuapp.com/api/fibonacci/until  
-`GET` https://dotnet-webapi-fibonacci.herokuapp.com/api/fibonacci/until/1000  
+`GET` https://dotnet-webapi-fibonacci.herokuapp.com/api/fibonacci/until/100
 `GET` https://dotnet-webapi-fibonacci.herokuapp.com/api/fibonacci/length  
-`GET` https://dotnet-webapi-fibonacci.herokuapp.com/api/fibonacci/length/1000  
+`GET` https://dotnet-webapi-fibonacci.herokuapp.com/api/fibonacci/length/10  
 
 
