@@ -1,5 +1,5 @@
 FROM microsoft/dotnet:runtime
-WORKDIR /dotnet-webapi-fibonacci
+WORKDIR /app
 COPY output .
 CMD ["dotnet", "dotnet-webapi-fibonacci.dll"]
 
