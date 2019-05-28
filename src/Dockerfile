@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:runtime
+FROM microsoft/dotnet:sdk AS build-env
 WORKDIR /app
 COPY output .
 CMD ["dotnet", "dotnet-webapi-fibonacci.dll"]
