@@ -1,6 +1,6 @@
 FROM microsoft/dotnet:sdk AS build-env
 WORKDIR /app
-COPY output .
+COPY --from=build-env /app/out .
 CMD ["dotnet", "dotnet-webapi-fibonacci.dll"]
 
 # FROM microsoft/dotnet:sdk AS build-env
