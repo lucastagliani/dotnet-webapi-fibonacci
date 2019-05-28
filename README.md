@@ -19,7 +19,7 @@ After install this, you can check if everything is OK by typing `dotnet --versio
 
 2. You also need* Docker Compose!
 
-_* Unless you would like to use your own Mongo Server locally._
+_* Unless you would like to use your own Mongo server locally._
 
 You can download it here: https://docs.docker.com/compose/install/
 
@@ -46,7 +46,7 @@ In command line:
 
     _It will be running on http://localhost:5000_
 
-    If you hit http://localhost:5000/api/fibonacci on your browser or API app (like Postman), you should get some data returned. 
+    If you hit http://localhost:5000/api/fibonacci on your browser or API app (for example Postman), you should get some data returned. 
 
 ![Image](how-to-run-it.png "How1 to run it")
 
