@@ -1,0 +1,20 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "description": "",
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "dotnet-webapi-fibonacci",
+  "scripts": {
+  },
+  "stack": "container"
+}
